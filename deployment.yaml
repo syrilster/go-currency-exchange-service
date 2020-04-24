@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currency-exchange-app
+spec:
+  selector:
+    matchLabels:
+      app: currency-exchange-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: currency-exchange-app
+    spec:
+      containers:
+        - name: "go-currency-exchange-service-sha256-1"
+          image: "asia.gcr.io/kube-go-exp/go-currency-exchange-service@sha256:5d3c8d56e65eac128182e7b5374de1ee170f88882fa2abccb0c4d94284876396"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
