@@ -11,8 +11,9 @@ type envConfig struct {
 	ServerPort int    `env:"SERVER_PORT" envDefault:"8000"`
 	Version    string `env:"VERSION" envDefault:"v1"`
 	BaseUrl    string `env:"BASE_URL"`
+	AppID      string `env:"APP_ID" envDefault:"76d9797902004813a592f6b2402590a9"`
 
-	CurrencyExchangeEndpoint string `env:"CURRENCY_EXCHANGE_ENDPOINT" envDefault:"http://currency-exchange-service.default.svc.cluster.local:8000"`
+	CurrencyExchangeEndpoint string `env:"CURRENCY_EXCHANGE_ENDPOINT" envDefault:"https://openexchangerates.org/api/latest.json"`
 }
 
 func newEnvironmentConfig() *envConfig {

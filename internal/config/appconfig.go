@@ -31,7 +31,7 @@ func (cfg *ApplicationConfig) CurrencyExchangeClient() exchange.ClientInterface 
 func NewApplicationConfig() *ApplicationConfig {
 	envValues := newEnvironmentConfig()
 	httpCommand := NewHttpCommand()
-	ceClient := exchange.NewClient(envValues.CurrencyExchangeEndpoint, httpCommand)
+	ceClient := exchange.NewClient(envValues.CurrencyExchangeEndpoint, httpCommand, envValues.AppID)
 
 	return &ApplicationConfig{
 		envValues:              envValues,

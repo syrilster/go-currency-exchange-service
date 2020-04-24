@@ -14,16 +14,18 @@ type ClientInterface interface {
 	GetExchangeRate(ctx context.Context, request Request) (*Response, error)
 }
 
-func NewClient(endpoint string, httpCommand customhttp.HTTPCommand) *client {
+func NewClient(endpoint string, httpCommand customhttp.HTTPCommand, appID string) *client {
 	return &client{
 		URL:         endpoint,
 		HttpCommand: httpCommand,
+		AppID:       appID,
 	}
 }
 
 type client struct {
 	URL         string
 	HttpCommand customhttp.HTTPCommand
+	AppID       string
 }
 
 func (c *client) GetExchangeRate(ctx context.Context, request Request) (*Response, error) {
@@ -67,5 +69,5 @@ func (c *client) GetExchangeRate(ctx context.Context, request Request) (*Respons
 }
 
 func (c *client) buildCurrencyExchangeEndpoint(from string, to string) (endpoint string) {
-	return c.URL + "/currency-exchange/from/" + from + "/to/" + to
+	return c.URL + "?app_id=" + c.AppID
 }

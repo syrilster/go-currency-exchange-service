@@ -6,7 +6,6 @@ type Request struct {
 }
 
 type Response struct {
-	FromCurrency       string  `json:"from"`
-	ToCurrency         string  `json:"to"`
-	ConversionMultiple float64 `json:"conversionMultiple"`
+	Base  string                 `json:"base"`
+	Rates map[string]interface{} `json:"rates"`
 }
