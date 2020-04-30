@@ -3,7 +3,7 @@
 This is an API layer built to connect to the openexchangerates.org and get the latest currency rates. The service will then
 perform some internal calculations and return the conversion multiple for fromCurrency to toCurrency conversion.
 
-#Debugging
+# Debugging
 * Once the app is in Running status (check kubectl get pods), exec (execute a command directly inside the Pod) into 
 the Pod to check its environment variables using command. This will give the HOST IP details
     ```
