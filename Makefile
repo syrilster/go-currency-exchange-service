@@ -1,4 +1,5 @@
 export GO111MODULE=on
+export GOFLAGS=-mod=vendor
 APP=go-currency-exchange-service
 KUBE-PROJECT-ID=kube-go-exp
 GCLOUD-REGION-PREFIX=asia.gcr.io
@@ -20,7 +21,7 @@ push:
 	docker push ${GCLOUD-REGION-PREFIX}/${KUBE-PROJECT-ID}/${APP}
 
 test:
-	go test
+	go test -v ./... 2>&1 | tee test-output.txt
 
 .PHONY: \
 	clean \

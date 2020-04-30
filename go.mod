@@ -7,5 +7,6 @@ require (
 	github.com/gorilla/handlers v1.4.0
 	github.com/gorilla/mux v1.7.0
 	github.com/sirupsen/logrus v1.5.0
-	github.com/syrilster/go-microservice-example v0.0.0-20200415233403-c5e0e27bab39 // indirect
+	github.com/stretchr/objx v0.2.0 // indirect
+	github.com/stretchr/testify v1.3.0
 )
