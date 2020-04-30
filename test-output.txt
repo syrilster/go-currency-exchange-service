@@ -1,0 +1,19 @@
+?   	github.com/syrilster/go-currency-exchange-service	[no test files]
+?   	github.com/syrilster/go-currency-exchange-service/internal	[no test files]
+?   	github.com/syrilster/go-currency-exchange-service/internal/config	[no test files]
+=== RUN   TestCurrencyExchange
+=== RUN   TestCurrencyExchange/success
+time="2020-05-01T09:52:50+10:00" level=info msg="Calling the exchange (openexchangerates) fetch API"
+time="2020-05-01T09:52:50+10:00" level=info msg="Calling the exchange (openexchangerates) fetch API"
+time="2020-05-01T09:52:50+10:00" level=info msg="Calling the exchange (openexchangerates) fetch API"
+--- PASS: TestCurrencyExchange (0.00s)
+    --- PASS: TestCurrencyExchange/success (0.00s)
+        service_test.go:77: PASS:	GetExchangeRate(*context.emptyCtx,exchange.Request)
+        service_test.go:77: PASS:	GetExchangeRate(*context.emptyCtx,exchange.Request)
+        service_test.go:77: PASS:	GetExchangeRate(*context.emptyCtx,exchange.Request)
+PASS
+ok  	github.com/syrilster/go-currency-exchange-service/internal/currencyexchange	(cached)
+?   	github.com/syrilster/go-currency-exchange-service/internal/customhttp	[no test files]
+?   	github.com/syrilster/go-currency-exchange-service/internal/exchange	[no test files]
+?   	github.com/syrilster/go-currency-exchange-service/internal/middlewares	[no test files]
+?   	github.com/syrilster/go-currency-exchange-service/internal/util	[no test files]
